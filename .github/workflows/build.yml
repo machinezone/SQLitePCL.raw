@@ -1,4 +1,4 @@
-name: .NET
+name: build
 
 on: workflow_dispatch
 
@@ -53,3 +53,14 @@ jobs:
       run: |
         cd SQLitePCL.raw/build
         dotnet run
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        repository: SQLitePCL.raw
+        commit_message: "cd build && dotnet run"
+        skip_dirty_check: true
+        skip_fetch: true
+        skip_checkout: true
+    - uses: actions/upload-artifact@v3
+      with:
+        name: nupkgs
+        path: SQLitePCL.raw/nupkgs/*.nupkg
