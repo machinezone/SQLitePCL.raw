@@ -27,27 +27,31 @@ public static class gen
     public const int MAJOR_VERSION = 2;
     public const int MINOR_VERSION = 1;
     public const int PATCH_VERSION = 3;
+    public const int MZ_VERSION = 1;
 
     // a version string with a -pre-timestamp in it
-    public static string NUSPEC_VERSION_PRE_TIMESTAMP = string.Format("{0}.{1}.{2}-pre{3}",
+    public static string NUSPEC_VERSION_PRE_TIMESTAMP = string.Format("{0}.{1}.{2}.{3}-pre{4}",
         MAJOR_VERSION,
         MINOR_VERSION,
         PATCH_VERSION,
+        MZ_VERSION,
         DateTime.Now.ToString("yyyyMMddHHmmss")
         );
 
     // a version string with -pre
-    public static string NUSPEC_VERSION_PRE = string.Format("{0}.{1}.{2}-pre",
+    public static string NUSPEC_VERSION_PRE = string.Format("{0}.{1}.{2}.{3}-pre",
         MAJOR_VERSION,
         MINOR_VERSION,
-        PATCH_VERSION
+        PATCH_VERSION,
+        MZ_VERSION
         );
 
     // a version string for release, with no -pre
-    public static string NUSPEC_VERSION_RELEASE = string.Format("{0}.{1}.{2}",
+    public static string NUSPEC_VERSION_RELEASE = string.Format("{0}.{1}.{2}.{3}",
         MAJOR_VERSION,
         MINOR_VERSION,
-        PATCH_VERSION
+        PATCH_VERSION,
+        MZ_VERSION
         );
 
     // keep one of the following 2:
